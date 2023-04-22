@@ -42,7 +42,9 @@ such a service that will allow you to download the generated audio quotes free o
 For the code and response generation, it will be helpful to use a chatbot service such as ChatGPT.
 
 For image creation, there are a number of services that will allow you to create images in various
-artistic styles such as the 
+artistic styles such as DreamStudio, which allows you to generate a fixed number of trial images 
+free of charge. I have provided one example of an 8-ball rendition in the assets folder using this
+service. 
 
 ## Architectural Strategies
 
