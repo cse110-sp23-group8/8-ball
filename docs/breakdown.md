@@ -27,7 +27,7 @@ We discussed implementing a "Magic Conch", where there are character buttons to 
 
 -Example: If user clicks Squidward, the magic conch gives generally negative responses ("Conch Response").
 
-When the user types in their question and generates an answer, the conch string is pulled and smoke appears.
+When the user types in their question and pushes the button to generate an answer, the conch string is pulled and smoke appears.
 
 ### Goals and Guidelines
 
