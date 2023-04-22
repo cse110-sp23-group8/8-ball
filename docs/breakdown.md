@@ -21,7 +21,7 @@ features along with some optional additional features to spice things up.
 
 ### Theme Idea
 
-We discussed implementing a "Magic Conch", where there are character buttons to represent characters from the show:
+We discussed implementing a "Magic Conch", where there are character buttons to represent characters from the show Spongebob:
 
 -These characters can say quotes from the show when clicked
 
