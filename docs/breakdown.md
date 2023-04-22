@@ -19,6 +19,16 @@ magic 8-ball, a space to enter your query, an animation once the button is press
 after the animation finishes. Your task will be to use (free) AI tools that will allow you to add these 
 features along with some optional additional features to spice things up.
 
+### Theme Idea
+
+We discussed implementing a "Magic Conch", where there are character buttons to represent characters from the show:
+
+-These characters can say quotes from the show when clicked
+
+-Example: If user clicks Squidward, the magic conch gives generally negative responses ("Conch Response").
+
+When the user types in their question and generates an answer, the conch string is pulled and smoke appears.
+
 ### Goals and Guidelines
 
 1. First, you will want to develop the skeleton of your webpage, potentially with some Chatbot prompt,
