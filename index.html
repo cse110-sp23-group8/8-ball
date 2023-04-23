@@ -2,15 +2,31 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Mystical 8-Ball</title>
+        <title>Spongebob Magic 8-Ball</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./src/css/style.css">
         <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
     </head>
     <body>
-        <main>
-            <h1>Hello World!</h1>
-        </main>
+        <div class="container">
+            <h1>Ask The Magic Conch Shell</h1>
+            <div class="conch">
+                <img src="./assets/mcs.png" alt="Conch">
+            </div>
+            <div class="characters">
+                <img class="character selected" id="spongebob" src="./assets/spongebob.png" alt="Spongebob">
+                <img class="character" id="squidward" src="./assets/squidward.png" alt="Squidward">
+                <img class="character" id="mr-krabs" src="./assets/mrkrabs.webp" alt="Mr. Krabs">
+            </div>
+            <div class ="question-area">
+                <label for="question">Ask the Magic Conch anything...</label>
+                <input type="text" id="question" name="question" placeholder="Enter your question...">
+                <button id="ask-btn">Ask</button>
+            </div>
+            <div class="reponse-area">
+                <p id="response"></p>
+            </div>
+        </div>
         <script src="./src/js/script.js"></script>
     </body>
 </html>
