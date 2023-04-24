@@ -101,7 +101,9 @@ function showMessage() {
   const randomMessage = characterData.messages[randomIndex];
 
   characterData.soundEffect.play();
-  messageElement.textContent = randomMessage;
+  //messageElement.textContent = "";
+  messageElement.textContent = typeOutMessage(randomMessage);
+
 }
 
 // Function to handle character selection
@@ -146,3 +148,24 @@ function registerRipcordAnimation() {
 }
 
 registerRipcordAnimation();
+
+function typeOutMessage(message) {
+  const messageElement = document.getElementById("response");
+
+  let index = -2;
+  const typingSpeed = 100; // The delay (in milliseconds) between typing each character
+
+  function typeNextCharacter() {
+    if (index < message.length) {
+      messageElement.textContent += message.charAt(index);
+      index++;
+      setTimeout(typeNextCharacter, typingSpeed);
+    }
+  }
+
+  typeNextCharacter();
+}
+
+
+
+
