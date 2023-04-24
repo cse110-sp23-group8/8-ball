@@ -79,76 +79,70 @@ const characters = {
   };
   
   // Add event listeners to each character
-  const characterElements = document.querySelectorAll(".character");
-  characterElements.forEach((character) =>
-    character.addEventListener("click", selectCharacter)
-  );
-  
-//   // Add event listener to the submit button
-//   const sumbitButton = document.getElementById("ask-btn");
-//   sumbitButton.addEventListener("click", showMessage);
+const characterElements = document.querySelectorAll(".character");
+characterElements.forEach((character) =>
+  character.addEventListener("click", selectCharacter)
+);
 
-const handle = document.querySelector('.handle');
-        const cord = document.querySelector('.cord');
-        const container = document.querySelector('.ripcord-container');
+// Function to show the message based on the selected character and question
+function showMessage() {
+  const selectedCharacter = document.querySelector(".character.selected").id;
 
-        let isCordPulled = false;
-
-        function customFunction() {
-            console.log('Custom function called');
-        }
-
-        handle.addEventListener('click', () => {
-            if (!isCordPulled) {
-                isCordPulled = true;
-                cord.style.height = '100px';
-                container.style.transform = 'translateY(-100px)';
-                setTimeout(() => {
-                    cord.style.height = '0';
-                    container.style.transform = 'translateY(0)';
-                    if (isCordPulled) {
-                        isCordPulled = false;
-                        // Display the message in a designated area
-                        const messageElement = document.getElementById("response");
-                        messageElement.textContent = "";
-                        showMessage(); // Call the custom function
-                    }
-                }, 1000 + Math.random() * 1000); // Time in milliseconds for the delay, adjust as needed
-            }
-        });
-  
-  // Function to show the message based on the selected character and question
-  function showMessage() {
-    const selectedCharacter = document.querySelector(".character.selected").id;
-  
-    // Check if the question box has a question
-    const messageElement = document.getElementById("response");
-    const questionBox = document.getElementById("question");
-    if (questionBox.value.trim() === "") {
-        messageElement.textContent = "Ask a question, please.";
-      return;
-    }
-  
-    const characterData = characters[selectedCharacter];
-    const randomIndex = Math.floor(Math.random() * characterData.messages.length);
-    const randomMessage = characterData.messages[randomIndex];
-    
-    
-    
-
-    characterData.soundEffect.play();
-    messageElement.textContent = randomMessage;
+  // Check if the question box has a question
+  const messageElement = document.getElementById("response");
+  const questionBox = document.getElementById("question");
+  if (questionBox.value.trim() === "") {
+    messageElement.textContent = "Ask a question, please.";
+    return;
   }
-  
-  // Function to handle character selection
-  function selectCharacter(event) {
-    const clickedElement = event.target;
-  
-    // Deselect all characters
-    const allCharacters = document.querySelectorAll(".character");
-    allCharacters.forEach((character) => character.classList.remove("selected"));
-  
-    // Select the clicked character
-    clickedElement.classList.add("selected");
+
+  const characterData = characters[selectedCharacter];
+  const randomIndex = Math.floor(Math.random() * characterData.messages.length);
+  const randomMessage = characterData.messages[randomIndex];
+
+  characterData.soundEffect.play();
+  messageElement.textContent = randomMessage;
+}
+
+// Function to handle character selection
+function selectCharacter(event) {
+  const clickedElement = event.target;
+
+  // Deselect all characters
+  const allCharacters = document.querySelectorAll(".character");
+  allCharacters.forEach((character) => character.classList.remove("selected"));
+
+  // Select the clicked character
+  clickedElement.classList.add("selected");
+}
+
+// Function to register the ripcord animation
+function registerRipcordAnimation() {
+  const handle = document.querySelector('.handle');
+  const cord = document.querySelector('.cord');
+  const container = document.querySelector('.ripcord-container');
+
+  let isCordPulled = false;
+
+  function customFunction() {
+      console.log('Custom function called');
   }
-  
+
+  handle.addEventListener('click', () => {
+      if (!isCordPulled) {
+          isCordPulled = true;
+          cord.style.height = '100px';
+          container.style.transform = 'translateY(-100px)';
+          setTimeout(() => {
+              cord.style.height = '0';
+              container.style.transform = 'translateY(0)';
+              if (isCordPulled) {
+                  isCordPulled = false;
+                  showMessage();
+              }
+          }, 1000 + Math.random() * 1000);
+      }
+  });
+}
+
+registerRipcordAnimation();
