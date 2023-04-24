@@ -76,6 +76,29 @@ const characters = {
   
       soundEffect: new Audio("./assets/mr-krabs.mp3"),
     },
+
+    patrick: {
+      messages: [
+        "Just keep swimming!",
+        "The jellyfish fields are looking bright!",
+        "Don't be a barnacle on the hull of life!",
+        "Life is a beach, enjoy the waves!",
+        "Seize the day like you seize a Krabby Patty!",
+        "Sometimes you gotta fall before you can swim.",
+        "The future is as clear as a glass of fresh water!",
+        "Never give up, never surrender!",
+        "It's always a good time for a good laugh!",
+        "Take a break and enjoy the sunshine!",
+        "Go with the flow and see where it takes you!",
+        "Don't worry, be happy!",
+        "The world is your oyster!",
+        "You can do anything you set your mind to!",
+        "Believe in yourself and anything is possible!",
+        "Life is an adventure, so make the most of it!",
+      ],
+
+      soundEffect: new Audio("./assets/patrick.mp3"),
+    },
   };
   
   // Add event listeners to each character
@@ -101,7 +124,9 @@ function showMessage() {
   const randomMessage = characterData.messages[randomIndex];
 
   characterData.soundEffect.play();
-  messageElement.textContent = randomMessage;
+  //messageElement.textContent = "";
+  messageElement.textContent = typeOutMessage(randomMessage);
+
 }
 
 // Function to handle character selection
@@ -146,3 +171,24 @@ function registerRipcordAnimation() {
 }
 
 registerRipcordAnimation();
+
+function typeOutMessage(message) {
+  const messageElement = document.getElementById("response");
+
+  let index = -2;
+  const typingSpeed = 100; // The delay (in milliseconds) between typing each character
+
+  function typeNextCharacter() {
+    if (index < message.length) {
+      messageElement.textContent += message.charAt(index);
+      index++;
+      setTimeout(typeNextCharacter, typingSpeed);
+    }
+  }
+
+  typeNextCharacter();
+}
+
+
+
+
