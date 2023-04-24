@@ -31,6 +31,7 @@ h1 {
 
 .magic-conch{
     margin-bottom: 20px;
+    position: relative;
 }
 
 .magic-conch img {
@@ -92,4 +93,47 @@ h1 {
 .character.selected {
     border: 3px solid #f7b948;
     border-radius: 5px;
+}
+
+.rotator-container{
+    position: absolute;
+    top: 48%; /* Custom position: Adjust these values as needed */
+    left: 57%; /* Custom position: Adjust these values as needed */
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+
+.ripcord-container {
+    position: relative;
+    transition: transform 0.5s;
+}
+
+.handle {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(136, 55, 190);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.handle-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cord {
+    position: absolute;
+    top: 20px;
+    left: 15px; /* Adjusted to center the cord */
+    width: 5px;
+    height: 0;
+    background-color: rgb(149, 149, 112);
+    transition: height 0.5s;
 }
