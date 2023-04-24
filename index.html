@@ -10,9 +10,6 @@
     <body>
         <div class="container">
             <h1>Ask The Magic Conch Shell</h1>
-            <div class="conch">
-                <img src="./assets/mcs.png" alt="Conch">
-            </div>
             <div class="characters">
                 <img class="character selected" id="spongebob" src="./assets/spongebob.png" alt="Spongebob">
                 <img class="character" id="squidward" src="./assets/squidward.png" alt="Squidward">
@@ -21,10 +18,24 @@
             <div class ="question-area">
                 <label for="question">Ask the Magic Conch anything...</label>
                 <input type="text" id="question" name="question" placeholder="Enter your question...">
-                <button id="ask-btn">Ask</button>
             </div>
+            <div class="magic-conch">
+                
+            
+                <img src="./assets/mcs.png" alt="Conch">
+                    <div class="rotator-container">
+                        <div class="ripcord-container">
+                            <div class="cord"></div>
+                            <div class="handle">
+                                <div class="handle-inner"></div>
+                            </div>
+                        </div>
+                    </div>
+                </img>
+            </div>
+
             <div class="reponse-area">
-                <p id="response"></p>
+                <p id="response">...</p>
             </div>
         </div>
         <script src="./src/js/script.js"></script>
