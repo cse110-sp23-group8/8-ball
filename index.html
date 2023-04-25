@@ -3,27 +3,29 @@
     <head>
         <meta charset="UTF-8">
         <title>Spongebob Magic 8-Ball</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./src/css/style.css">
         <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
     </head>
     <body>
+        <!-- Main Container -->
         <div class="container">
             <h1>Ask The Magic Conch Shell</h1>
+            <!-- Character Selection -->
             <div class="characters">
                 <img class="character selected" id="spongebob" src="./assets/spongebob.png" alt="Spongebob">
                 <img class="character" id="squidward" src="./assets/squidward.png" alt="Squidward">
                 <img class="character" id="mrKrabs" src="./assets/mrkrabs.webp" alt="Mr. Krabs">
                 <img class="character" id="patrick" src="./assets/patrick.webp" alt="Mr. patrick">
-
             </div>
+            <!-- Question Input -->
             <div class ="question-area">
                 <label for="question">Ask the Magic Conch anything...</label>
                 <input type="text" id="question" name="question" placeholder="Enter your question...">
             </div>
+            <!-- Conch Shell and Ripcord Elements -->
             <div class="magic-conch">
-                
-            
                 <img src="./assets/mcs.png" alt="Conch">
                     <div class="rotator-container">
                         <div class="ripcord-container">
@@ -35,11 +37,13 @@
                     </div>
                 </img>
             </div>
-
+            <!-- Response Area -->
             <div class="reponse-area">
                 <p id="response">...</p>
             </div>
         </div>
+        <!-- Bubble Container -->
+        <div class="bubble-container"></div>
         <script src="./src/js/script.js"></script>
     </body>
 </html>
